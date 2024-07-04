@@ -6,6 +6,7 @@ Gourmet Galore is a recipe book web application designed to inspire culinary cre
 
 ## Video Demo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/obznqM87Z_M?si=zMM8IGcvb0FuSFel" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Video Demo](https://img.youtube.com/vi/obznqM87Z_M/0.jpg)](https://www.youtube.com/watch?v=obznqM87Z_M)
+
 
 
