@@ -1,4 +1,4 @@
-# Project Name
+# Gourmet Galore
 
 ## About
 
