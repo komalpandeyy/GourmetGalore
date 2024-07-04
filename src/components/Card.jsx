@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Button from 'react-bootstrap/Button';
+import styles from './Card.module.css'; // Import CSS Modules for component-specific styles
 
 const Card = (props) => {
     const { recipe } = props.res;
@@ -19,34 +21,33 @@ const Card = (props) => {
     };
 
     return (
-        <div>
+        <div className={styles.card}>
             <h3>{label}</h3>
             
-            <button onClick={handleToggleHealthLabels}>
+            <img src={image} alt={label} className={styles.cardImage} />
+            <Button variant="info" className={styles.healthLabels} onClick={handleToggleHealthLabels}>
                 {showHealthLabels ? "Hide Health Labels" : "Show Health Labels"}
-            </button>
+            </Button>
             {showHealthLabels && (
-                <div>
+                <div className={styles.healthLabelsContainer}>
                     {healthLabels.map((tag, index) => (
-                        <span key={index} style={{ marginRight: "5px" }}>{tag}</span>
+                        <span key={index} className={styles.healthLabel}>{tag}</span>
                     ))}
                 </div>
             )}
             
-            <img src={image} alt={label} />
-            
-            <div>
+            {/* <div>
                 <ul>
                     {ingredientLines.map((ingredient, index) => (
                         <li key={index}>{ingredient}</li>
                     ))}
                 </ul>
-            </div>
+            </div> */}
             
-            <button onClick={handleAddToFavorites}>
+            <Button variant={isFavorite ? "danger" : "success"} onClick={handleAddToFavorites}>
                 {isFavorite ? "Remove from favorites" : "Add to favorites"}
-            </button>
-            <button onClick={handleViewRecipe}>View Detailed Recipe</button>
+            </Button>
+            <Button variant="primary" onClick={handleViewRecipe}>View Detailed Recipe</Button>
         </div>
     );
 };

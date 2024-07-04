@@ -1,1 +1,13 @@
-import {Button} from 'react-bootstrap/Button';
+/* App.css */
+.container {
+  background-color: #553c9a; /* Primary color */
+  /* color: #f9f9f9; Accent color for text */
+}
+
+.recipes {
+  background-color: #f9f9f9; /* Accent color background */
+}
+
+.heading {
+  color: #553c9a; /* Primary color for headings */
+}
