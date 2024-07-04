@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import Card from './components/Card';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 
 
 function App() {
@@ -22,7 +24,7 @@ function App() {
 
   const submitHandler = ()=>{
     setQuery(search);
-    //setSearch("");
+    setSearch("");
   }
 
   return(
@@ -33,15 +35,17 @@ function App() {
             <button type='submit' onClick={submitHandler}>Search</button>
         </div>
       <section>
-        <h2>Caption</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde eveniet mollitia natus a velit minima tempore molestias, quasi tempora nulla consequatur neque iure laboriosam ipsam voluptas. Tempore, ad vitae.</p>
+        <h2>Gourmet Galore: Savor the Flavors, Save the Favorites!</h2>
+        <p>"Gourmet Galore" is a React-based recipe book app where users can browse through various recipes, view detailed ingredients and health labels, and add their favorite recipes to a favorites list for easy access.</p>
       </section>
       <div className='recipes'>
         {recipes.map((item) =>{
           return <Card res={item}/>
-        })
+        }) 
       }
+      
       </div>
+      
 
     </div>
   )
