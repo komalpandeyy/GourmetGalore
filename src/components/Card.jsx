@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import Button from 'react-bootstrap/Button';
-import styles from './Card.module.css'; // Import CSS Modules for component-specific styles
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Styles from './Card.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
 
 const Card = (props) => {
     const { recipe } = props.res;
     const { label, healthLabels, ingredientLines, image, shareAs } = recipe;
     const [isFavorite, setIsFavorite] = useState(false);
     const [showHealthLabels, setShowHealthLabels] = useState(false);
+
+
 
     const handleViewRecipe = () => {
         window.open(shareAs, "_blank");
@@ -21,21 +26,32 @@ const Card = (props) => {
     };
 
     return (
-        <div className={styles.card}>
-            <h3>{label}</h3>
-            
-            <img src={image} alt={label} className={styles.cardImage} />
-            <Button variant="info" className={styles.healthLabels} onClick={handleToggleHealthLabels}>
+        <div className={Styles.recipe}>
+
+
+            <img className={Styles.photo} src={image} alt={label} style={{ display: "block" }} />
+
+            <h3 className={Styles.label}>{label}</h3>
+
+            <button className={Styles.healthLabel} onClick={handleToggleHealthLabels}>
                 {showHealthLabels ? "Hide Health Labels" : "Show Health Labels"}
-            </Button>
+            </button>
             {showHealthLabels && (
-                <div className={styles.healthLabelsContainer}>
+                <div className={Styles.item}>
+
                     {healthLabels.map((tag, index) => (
-                        <span key={index} className={styles.healthLabel}>{tag}</span>
+                        <span
+                            key={index}
+                            className={Styles.tag}
+                            style={{ backgroundColor: index % 2 === 0 ? '#6c5ce7' : '#f76c6c' }}>
+                            {tag}
+                        </span>
                     ))}
+
                 </div>
             )}
-            
+
+
             {/* <div>
                 <ul>
                     {ingredientLines.map((ingredient, index) => (
@@ -43,11 +59,16 @@ const Card = (props) => {
                     ))}
                 </ul>
             </div> */}
-            
-            <Button variant={isFavorite ? "danger" : "success"} onClick={handleAddToFavorites}>
-                {isFavorite ? "Remove from favorites" : "Add to favorites"}
-            </Button>
-            <Button variant="primary" onClick={handleViewRecipe}>View Detailed Recipe</Button>
+
+            <button
+                className={`${Styles.favLabel} ${isFavorite ? Styles.favActive : ''}`}
+                onClick={handleAddToFavorites}
+            >
+                <FontAwesomeIcon icon={isFavorite ? solidStar : regularStar} />
+            </button>
+
+
+            <button onClick={handleViewRecipe} className={Styles.detailedLabel}>View Detailed Recipe</button>
         </div>
     );
 };

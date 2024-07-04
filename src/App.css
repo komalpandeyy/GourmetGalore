@@ -1,13 +1,45 @@
-/* App.css */
-.container {
-  background-color: #553c9a; /* Primary color */
-  /* color: #f9f9f9; Accent color for text */
+.header{
+  background-color: #231709;
+  height: 100px;
+  width: 100%;
+}
+.search{
+  float: right;
+  /* margin-top:-10px;
+  margin-right: 30px; */
+  padding-top: 50px;
+  padding-right: 20px;
+  
 }
 
-.recipes {
-  background-color: #f9f9f9; /* Accent color background */
+.search-bar{
+  width: 350px;
 }
 
-.heading {
-  color: #553c9a; /* Primary color for headings */
+.search-button{
+  background-color: #aef359;
+  color: white;
+  font-weight: bolder;
+}
+
+.title{
+  padding: 20px;
+  float: left;
+  font-size: 3rem;
+  color: whitesmoke;
+  letter-spacing: 10px;
+  font-family: serif;
+  
+}
+
+.logo{
+  height: 70px;
+  width: 70px
+}
+
+.recipes{
+  display: flex;
+  margin-top: 60px;
+  flex-wrap: wrap; 
+  gap: 5px; 
 }

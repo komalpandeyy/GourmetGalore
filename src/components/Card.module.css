@@ -1,0 +1,84 @@
+.label{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+
+
+.healthLabel,.detailedLabel,.favLabel{
+    float: right;
+    margin-right: 10px;
+    background-color: rgba(51, 51, 51, 0.05);
+    border-radius: 8px;
+    border-width: 0;
+    color: red;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    padding: 10px 12px;
+    text-align: center;
+    transition: all 200ms;
+    
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.favLabel{
+    margin-left: 20px;
+    float: left;
+    
+} 
+
+.favLabel:hover {
+    background-color: #bfc1c2; 
+}
+
+.favActive {
+    background-color: white; /* Background color when active */
+    color: goldenrod; /* Text color when active */
+}
+
+.recipe{
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 390px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.photo{
+    margin-left:20px;
+    margin-right:20px;
+    margin-top: 20px;
+    height: 200px;
+    width: 350px;
+}
+
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #f76c6c; /* You can use your preferred color */
+    color: white;
+    border-radius: 3px;
+    position: relative;
+    font-size: 14px;
+}
+
+
+.tag::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    background-color: white; /* Hole color */
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+}
+
